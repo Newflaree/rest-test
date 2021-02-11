@@ -9,10 +9,10 @@ const {
 
 const router = new Router();
 
-router.get( '/projects', );
-router.post( '/projects', );
-router.put( '/projects', );
-router.delete( '/projects', );
+router.get( '/', getProjects );
+router.post( '/', postProject );
+router.put( '/', putProject );
+router.delete( '/', deleteProject );
 
 
 module.exports = router;
