@@ -1,3 +1,7 @@
 # Notas importantes
 
-* Recuerda ejecutar ```npm install``` para recontruir los módulos de node.
+* Primero que todo, reconstruimos los módulos de node
+```
+npm install
+```
+
