@@ -1,14 +1,25 @@
 const { request, response } = require( 'express' );
 
-const getProjects = ( req = request, res = response ) => {
+const Project = require( '../models/project.model' );
+
+const getProjects = async( req = request, res = response ) => {
+  const projects = await Project.find();
+
   res.json({
-    msg: 'get Projects - Controller'
+    msg: 'Todos los proyectos',
+    projects
   }); 
 }
 
-const postProject = ( req = request, res = response ) => {
+const postProject = async( req = request, res = response ) => {
+  const body = req.body;
+  const project = new Project( body );
+
+  await project.save();
+
   res.json({
-    msg: 'post Projects - Controller'
+    msg: 'Proyecto Creado',
+    project
   }); 
 }
 
